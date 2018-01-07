@@ -1,0 +1,936 @@
+/***** All *****/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility !important;
+}
+
+.nonne {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 700;
+    color: blue;
+}
+
+a:visited {
+    color: blue;
+}
+
+.fade_content {
+    margin-top: 100px;
+    opacity: 0;
+    animation: fade_content_kf;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes fade_content_kf {
+    0% {
+        margin-top: 100px;
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        margin-top: 0px;
+    }
+}
+
+.fade_content_smaller {
+    margin-top: 200px;
+    opacity: 0;
+    animation: fade_content_smaller_kf;
+    animation-duration: 1s;
+    animation-delay: 0.8s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes fade_content_smaller_kf {
+    0% {
+        margin-top: 200px;
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        margin-top: 50px;
+    }
+}
+
+.text {
+    position: fixed;
+    left: -10%;
+    bottom: -18%;
+    z-index: -5;
+    font-size: 25em;
+    color: #f3f3f3;
+    opacity: 1;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+.text_blue {
+    transition: all 1s ease;
+    color: blue;
+}
+
+
+.text_test {
+    position: fixed;
+    left: -5%;
+    bottom: 8%;
+    z-index: -5;
+    font-size: 30vw;
+    color: black;
+    line-height: 1px;
+    vertical-align: baseline;
+    opacity: 1;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    transition: all 1s ease;
+    animation: fade_text_kf;
+    animation-duration: 1s;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes fade_text_kf {
+    0% {
+        opacity: 1;
+        left: -5%;
+        bottom: 8%;
+        z-index: -5;
+
+        font-size: 30vw;
+
+    }
+
+    100% {
+        opacity: 0.038;
+        left: -5%;
+        bottom: 8%;
+        font-size: 50vw;
+
+    }
+}
+
+
+.blue {
+    transition: all 1s ease;
+    color: black;
+}
+
+
+
+h2 {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: blue;
+    font-size: 4em;
+    margin-bottom: 4%;
+
+    transition: all 0.8s ease;
+}
+
+.h2_black {
+    color: black;
+}
+
+.wrapper {
+    position: relative;
+    margin: 0 auto 0 auto;
+    max-width: 1280px;
+    width: 80vw;
+}
+
+.wrapper_smaller {
+    position: relative;
+    margin: 100px auto 0px auto;
+    max-width: 1024px;
+    width: 80vw;
+}
+
+footer {
+    height: 150px;
+    line-height: 100px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+footer .up {
+    position: absolute;
+    left: calc(50% - 50px);
+    width: 100px;
+    height: 120px;
+    line-height: 120px;
+    font-size: 4.5em;
+    margin: 0 auto 25px 0;
+    transition: all 1.2s ease;
+    transition-delay: 0.2s;
+}
+
+.up_black {
+    color: rgba(0, 0, 255, 0);
+}
+
+.up_blue {
+    position: absolute;
+    transition: all 1s ease;
+    color: blue;
+    width: 100px;
+    margin: auto;
+}
+
+footer .up:hover {
+    cursor: pointer;
+}
+
+.home_icon {
+    position: absolute;
+    right: 50px;
+    top: 38px;
+    width: 25px;
+    height: 25px;
+    background-size: 100%;
+    background-image: url(img/ikoner/home_blue.svg);
+    opacity: 0.83;
+}
+
+.home_icon:hover {
+    cursor: pointer;
+    opacity: 0.63;
+}
+
+.icon_active {
+    background-image: url(img/ikoner/home_blue.svg);
+    opacity: 0.83;
+}
+
+
+
+
+/***** Slide up on load *****/
+
+#overlay {
+    top: 0;
+    z-index: 10;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+
+    background-color: rgba(7, 69, 239, 0.83);
+}
+
+#overlay h1 {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 5em;
+    color: white;
+    line-height: 100vh;
+    text-align: center;
+}
+
+.slide_up {
+    top: 0;
+    left: 0;
+    animation: slide_up_kf;
+    animation-duration: 1s;
+    animation-delay: 0.4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes slide_up_kf {
+    0% {
+        top: 0;
+    }
+
+    100% {
+        top: -110vh;
+    }
+}
+
+
+
+/***** Profile *****/
+
+.profile_icon {
+    position: absolute;
+    top: 38px;
+    right: 0;
+    width: 28px;
+    height: 28px;
+    opacity: 0.83;
+    background-image: url(img/ikoner/profile_blue.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.profile_icon:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.profile_white {
+    background-image: url(img/ikoner/profile_white.svg);
+    opacity: 1;
+}
+
+.profile_white:hover {
+    opacity: 0.8;
+}
+
+.profile {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    top: -110%;
+    overflow: hidden;
+    transition: 0.5s all ease-in-out;
+
+    background-color: rgba(7, 69, 239, 0.83);
+}
+
+.profile_wrapper {
+    margin: 0 auto;
+    max-width: 1280px;
+    height: 100%;
+}
+
+.profile_column {
+    position: absolute;
+    left: 0;
+    width: 50%;
+    height: 100%;
+}
+
+.profile_column img {
+    position: absolute;
+    width: 80%;
+    bottom: 0;
+    opacity: 0.9;
+    left: 10%;
+}
+
+.billede {
+    background-image: url(img/profil3.png);
+    background-size: 100%;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+}
+
+.billede:hover {
+    background-image: url(img/profil2.png);
+}
+
+.billede:focus {
+    background-image: url(img/profil2.png);
+}
+
+.billede:active {
+    background-image: url(img/profil2.png);
+}
+
+.profile_column2 {
+    position: absolute;
+    right: 5%;
+    width: 50%;
+    top: 28%;
+}
+
+.profile_column2 p {
+    width: 80%;
+    margin: 50px auto;
+    color: white;
+    font-size: 1.3em;
+}
+
+.profile_column2 a {
+    color: white;
+
+}
+
+.profile_active {
+    top: 0px;
+    transition: 0.5s all ease-in-out;
+}
+
+.profile h1 {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 5em;
+    color: white;
+    text-align: center;
+}
+
+.cross {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    background-image: url(img/ikoner/cross.svg);
+    background-size: 100%;
+    width: 30px;
+    height: 30px;
+}
+
+.cross:hover {
+    cursor: pointer;
+}
+
+
+
+/***** Slideshow *****/
+
+/***** Projects *****/
+
+section#projects {
+    width: 100%;
+    margin: 30px 0 30px 0;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.project {
+    position: relative;
+    overflow: hidden;
+    flex-basis: 30%;
+    height: 100%;
+    margin: 0 5% 3vw 0;
+    transition: all 0.5s ease;
+}
+
+.project_overlay {
+    opacity: 1;
+    transition: all 0.6s ease;
+    position: absolute;
+    width: 100%;
+    height: 98%;
+    overflow: hidden;
+}
+
+.overlayy {
+    width: 100%;
+    height: 100%;
+    transition: all 0.6s ease;
+
+    background-color: rgba(7, 69, 239, 0.60);
+}
+
+.project_overlay:hover .overlayy {
+    width: 100%;
+    height: 0%;
+}
+
+/*
+.project_overlay:hover h3 {
+    color: blue;
+}
+
+*/
+
+.project_overlay h3 {
+    height: 100%;
+    line-height: 16vw;
+    color: white;
+    font-size: 2em;
+    text-align: center;
+}
+
+
+.project:nth-of-type(3n+3) {
+    margin-right: 0;
+}
+
+.project img {
+    width: 100%;
+    height: 100%;
+}
+
+
+/***** Projects template *****/
+
+.segment {
+    position: relative;
+    margin-top: 110px;
+    width: 100%;
+}
+
+.wrapper_smaller h2 {
+    margin-bottom: 0;
+}
+
+.wrapper_smaller h5 {
+    margin: 0px 0 0px 0px;
+    font-weight: 400;
+    padding: 0;
+    color: #999;
+    text-transform: uppercase;
+}
+
+.column {
+    margin-top: -70px;
+    width: 45%;
+}
+
+/** video **/
+
+.videocolumn {
+    margin-top: 0px;
+    margin-bottom: 150px;
+}
+
+.hs-responsive-embed-youtube iframe {
+    position: absolute;
+    width: 100%!important;
+    height: 100%!important;
+}
+
+.hs-responsive-embed-youtube {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 Aspect Ratio */
+    padding-top: 25px;
+}
+
+
+/** **/
+
+.column h3 {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    text-transform: uppercase;
+    color: black;
+    font-size: 3em;
+    margin-bottom: 15px;
+}
+
+.column h4 {
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    font-size: 1.05em;
+    font-weight: 700;
+    margin-bottom: 15px;
+    margin-top: 35px;
+}
+
+.segment h5 {
+    margin: -20px 0 40px 0px;
+    font-weight: 400;
+    padding: 0;
+    color: #999;
+}
+
+.image_box h5 {
+    margin: 10px 0 10px 0px;
+    font-weight: 400;
+    padding: 0;
+    color: blue;
+}
+
+.column p {
+    margin: 12px 0 12px 0;
+    line-height: 1.5;
+}
+
+
+.rotate_text {
+    position: absolute;
+    font-size: 0.75em;
+    margin-top: 8px;
+    transform: rotate(-90deg);
+}
+
+.right {
+    margin-left: 55%;
+}
+
+.image_box {
+    position: relative;
+    width: 90%;
+    margin-left: 10%;
+}
+
+.image_box p {
+    margin-top: 8px;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    text-transform: uppercase;
+    color: black;
+    font-size: 1.6em;
+    margin-bottom: 15px;
+}
+
+.image_box img {
+    width: 100%;
+    background-image: url(img/stilartsite/chrysler.jpg);
+    background-size: 100%;
+}
+
+/**** MEDIA SCREEN ****/
+
+@media screen and (max-width: 860px) {
+    .project_overlay {
+        height: 100%;
+    }
+
+    .overlayy {
+        height: 98.7%;
+    }
+
+    h2 {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 90px;
+    }
+
+    .wrapper_smaller h2 {
+        width: 100%;
+        font-size: 2.5em;
+        text-align: center;
+    }
+    .wrapper_smaller h5 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .image_box h5 {
+        text-align: left;
+    }
+
+
+
+    .home_icon {
+        right: calc(50% + 25px);
+        margin-top: 65px;
+    }
+
+    .profile_icon {
+        margin-top: 65px;
+        right: calc(50% - 50px);
+    }
+
+    .project {
+        flex-basis: 100%;
+        margin: 0 0% 5% 0;
+    }
+
+    .text {
+        left: -10%;
+        bottom: -8%;
+        font-size: 12em;
+    }
+
+    #overlay h1 {
+        font-size: 4em;
+    }
+
+    .project_overlay h3 {
+        padding-top: 25%;
+    }
+
+
+    /*** Projects ***/
+    .column {
+        margin-top: 0px;
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .rotate_text {
+        display: none;
+    }
+
+    .right {
+        margin-left: 0%;
+    }
+
+    .image_box {
+        width: 100%;
+        margin-left: 0%;
+    }
+
+    /*** Profile ****/
+    .profile_column img {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0%;
+    }
+    .profile_column2 p {
+        font-size: 1.2em;
+    }
+    .profile_active {
+        top: 0px;
+        transition: 0.5s all ease-in-out;
+    }
+    .profile h1 {
+        font-size: 4.4em;
+    }
+
+    .billede {
+        background-size: 120%;
+        background-position: 50% 100%;
+    }
+
+    .up_black {
+        color: rgba(0, 0, 255, 0.99);
+    }
+
+    .up {
+        color: blue;
+    }
+
+    .up_blue {
+        color: blue;
+    }
+}
+
+@media screen and (max-width: 668px) and (orientation:landscape) {
+    .billede {
+        background-size: 70%;
+        background-position: 50% 100%;
+    }
+
+    .profile_column2 {
+        top: 10%;
+    }
+
+    .profile_column2 h1 {
+        font-size: 3em;
+    }
+
+    .profile_column2 p {
+        margin: 10px auto 0 auto;
+    }
+}
+
+@media screen and (max-width: 768px) and (orientation:portrait) {
+    .billede {
+        background-size: 65%;
+        background-position: 40% 100%;
+    }
+
+    .profile_column {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 60%;
+    }
+
+    .wrapper_smaller h2 {
+        width: 100%;
+        font-size: 2.3em;
+        text-align: center;
+    }
+
+    .profile_column img {
+        position: absolute;
+        width: 66%;
+        left: 17%;
+        bottom: 0;
+    }
+
+    .profile_column2 {
+        position: absolute;
+        right: 0%;
+        width: 100%;
+        height: 30%;
+        top: 5%;
+    }
+
+    .profile_column2 p {
+        width: 80%;
+        margin: 40px auto;
+        color: white;
+        font-size: 1.7em;
+    }
+
+    .profile_active {
+        top: 0px;
+        transition: 0.5s all ease-in-out;
+    }
+
+    .profile h1 {
+        font-size: 2.6em;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .billede {
+        background-size: 70%;
+        background-position: 40% 100%;
+    }
+
+
+
+    .profile_column {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 60%;
+    }
+
+    .wrapper_smaller h2 {
+        width: 100%;
+        font-size: 2.3em;
+        text-align: center;
+    }
+
+    .profile_column img {
+        position: absolute;
+        width: 66%;
+        left: 17%;
+        bottom: 0;
+    }
+
+    .profile_column2 {
+        position: absolute;
+        right: 0%;
+        width: 100%;
+        height: 30%;
+        top: 5%;
+    }
+
+    .profile_column2 p {
+        width: 80%;
+        margin: 40px auto;
+        color: white;
+        font-size: 1.1em;
+    }
+
+    .profile_active {
+        top: 0px;
+        transition: 0.5s all ease-in-out;
+    }
+
+    .profile h1 {
+        font-size: 2.6em;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    /*
+    .profile_column img {
+        position: absolute;
+        width: 56%;
+        left: 22%;
+        bottom: 0;
+    }*/
+    .billede {
+        background-size: 50%;
+        background-position: 40% 100%;
+    }
+
+    .profile_column {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 70%;
+    }
+
+    .profil_column2 p {
+        font-size: 1.2em;
+    }
+
+    .profile_column2 {
+        position: absolute;
+        right: 0%;
+        width: 100%;
+        height: 30%;
+        top: 5%;
+    }
+
+    .column h3 {
+        font-size: 2.2em;
+    }
+
+    h2 {
+        font-weight: 900;
+        font-size: 3.85em;
+    }
+
+}
+
+@media screen and (min-width: 1280px) {
+    .project {
+        margin: 0 5% 50px 0;
+    }
+
+    .billede {
+        background-size: 60%;
+    }
+
+
+}
+
+@media screen and (max-width: 330px) and (orientation:portrait) {
+
+    h2 {
+        font-weight: 900;
+        font-size: 2.85em;
+    }
+}
+
+@media screen and (max-width: 569px) and (orientation:landscape) {
+
+    .profile_column {
+        position: absolute;
+        left: 0;
+        width: 50%;
+        height: 100%;
+    }
+
+    .billede {
+        background-image: url(img/profil3.png);
+        background-size: 80%;
+        background-position: 20% 100%;
+        background-repeat: no-repeat;
+        height: 100%;
+        width: 100%;
+    }
+
+    .profile_column2 {
+        position: absolute;
+        right: 5%;
+        width: 50%;
+        top: 15%;
+    }
+
+    .profile_column2 p {
+        width: 80%;
+        margin: 10px auto;
+        color: white;
+        font-size: 1em;
+    }
+
+    .profile_column2 a {
+        color: white;
+
+    }
+
+    .profile h1 {
+        font-size: 3em;
+    }
+
+}
